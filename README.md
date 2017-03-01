@@ -6,7 +6,10 @@ cd ~
 git clone https://github.com/codisms/vim-config.git .vim
 cd .vim
 git submodule init
-cd ..
+git submodule update --init --recursive
+cd bundle/YouCompleteMe
+./install.py
+cd ~
 ln -s .vim/vimrc .vimrc
 ```
 
