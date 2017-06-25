@@ -70,6 +70,12 @@ let g:go_highlight_build_constraints = 1
 "let g:go_fmt_command = "/root/go/src/golang.org/x/tools/cmd/goimports/goimports"
 let g:go_fmt_command = "goimports"
 
+" Typescript
+if !exists("g:ycm_semantic_triggers")
+	let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
 " dbext settings
 let g:dbext_default_buffer_lines = 20
 let g:dbext_default_type = 'PGSQL'
