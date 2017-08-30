@@ -1,3 +1,6 @@
 *.swp
 vimrc.db
 vimrc.dbext
+
+.netrwhist
+
