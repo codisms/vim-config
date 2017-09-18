@@ -8,7 +8,7 @@ cd .vim
 git submodule init
 git submodule update --init --recursive
 cd bundle/YouCompleteMe
-./install.py
+./install.py --all
 cd ~
 ln -s .vim/vimrc .vimrc
 ```
