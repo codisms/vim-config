@@ -173,3 +173,7 @@ nnoremap t6 6gt
 nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
+
+nnoremap <C-C> :DBPromptForBufferParameters<cr>
+nnoremap <C-E> :DBExecSQLUnderCursor<cr>
+inoremap <C-E> <C-\><C-O>:DBExecSQLUnderCursor<cr>
