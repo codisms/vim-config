@@ -1,6 +1,27 @@
-[submodule "vim-obsession"]
-	path = vim-obsession
-	url = https://github.com/tpope/vim-obsession.git
-[submodule "bundle/vim-pathogen"]
-	path = bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
+#[submodule "vim-obsession"]
+#	path = vim-obsession
+#	url = https://github.com/tpope/vim-obsession.git
+#[submodule "bundle/vim-pathogen"]
+#	path = bundle/vim-pathogen
+#	url = https://github.com/tpope/vim-pathogen.git
+[submodule "pack/bundle/start/fzf"]
+	path = pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "pack/bundle/start/vim-projectionist"]
+	path = pack/bundle/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+[submodule "pack/bundle/start/vim-dispatch"]
+	path = pack/bundle/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "pack/bundle/start/ale"]
+	path = pack/bundle/start/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "pack/bundle/start/vim-test"]
+	path = pack/bundle/start/vim-test
+	url = https://github.com/janko-m/vim-test.git
+[submodule "pack/bundle/start/vim-editorconfig"]
+	path = pack/bundle/start/vim-editorconfig
+	url = https://github.com/sgur/vim-editorconfig
+[submodule "pack/bundle/start/LanguageClient-neovim"]
+	path = pack/bundle/start/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim.git
