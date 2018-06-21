@@ -11,15 +11,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
-let g:syntastic_enable_balloons = 0
-let g:syntastic_loc_list_height = 5
-
 " Set the colors
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
@@ -31,6 +22,13 @@ colorscheme solarized
 filetype plugin on
 filetype plugin indent on
 let g:sql_type_default = 'pgsql'
+
+let g:ale_linters = { 'javascript': [ 'eslint' ] }
+
+nmap <silent> [W <Plug>(ale_first)
+nmap <silent> [w <Plug>(ale_previous)
+nmap <silent> ]w <Plug>(ale_next)
+nmap <silent> ]W <Plug>(ale_last)
 
 " Absolute defaults
 " Enable syntax highlighting
