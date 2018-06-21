@@ -1,45 +1,16 @@
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "bundle/dbext.vim"]
-	path = bundle/dbext.vim
-	url = https://github.com/vim-scripts/dbext.vim.git
-[submodule "bundle/pgsql.vim"]
-	path = bundle/pgsql.vim
-	url = https://github.com/exu/pgsql.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/taboo.vim"]
-	path = bundle/taboo.vim
-	url = https://github.com/gcmt/taboo.vim.git
-[submodule "bundle/typescript-vim"]
-	path = bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "bundle/vim-go"]
-	path = bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-javascript"]
-	path = bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule "vim-obsession"]
 	path = vim-obsession
 	url = https://github.com/tpope/vim-obsession.git
-[submodule "bundle/vim-pathogen"]
+[submodule "pack/bundle/start/vim-pathogen"]
 	path = bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "bundle/vim-ruby"]
-	path = bundle/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/vim-obsession"]
-	path = bundle/vim-obsession
-	url = https://github.com/tpope/vim-obsession.git
-[submodule "repo/vim-pathogen"]
-	path = repo/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "repo/solarized"]
 	path = repo/solarized
 	url = https://github.com/altercation/solarized.git
+[submodule "pack/bundle/start/fzf"]
+	path = pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "pack/bundle/start/vim-dispatch"]
+	path = pack/bundle/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+	branch = job
