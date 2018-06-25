@@ -7,9 +7,36 @@ if has("autocmd")
 endif
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:lsc_server_commands = { 
+			\ 'javascript': 'javascript-typescript-stdio',
+			\ 'css': 'vscode-css-languageserver-bin --stdio',
+			\ 'scss': 'vscode-css-languageserver-bin --stdio',
+			\ 'less': 'vscode-css-languageserver-bin --stdio',
+			\ 'go': 'go-langserver',
+			\}
+"let g:lsc_auto_map = v:true " Use defaults
+"" ... or set only the keys you want mapped, defaults are:
+"let g:lsc_auto_map = {
+"    \ 'GoToDefinition': '<C-]>',
+"    \ 'FindReferences': 'gr',
+"    \ 'NextReference': '<C-n>',
+"    \ 'PreviousReference': '<C-p>',
+"    \ 'FindImplementations': 'gI',
+"    \ 'FindCodeActions': 'ga',
+"    \ 'DocumentSymbol': 'go',
+"    \ 'WorkspaceSymbol': 'gS',
+"    \ 'ShowHover': 'K',
+"    \ 'Completion': 'completefunc',
+"    \}
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+"set completeopt-=preview
+set completeopt=longest,menuone
 
 " Set the colors
 let g:solarized_visibility = "high"
@@ -78,7 +105,6 @@ let g:dbext_default_user = 'postgres'
 let g:dbext_default_history_file = '~/.dbext_sql_history'
 let g:dbext_default_history_size = 250
 let g:dbext_default_display_cmd_line = 1
-map <F5> <Plug>DBExecSQLUnderCursor
 
 if filereadable(glob("~/.vim/vimrc.dbext"))
 	source ~/.vim/vimrc.dbext
@@ -169,6 +195,7 @@ nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
 
-nnoremap <C-C> :DBPromptForBufferParameters<cr>
-nnoremap <C-E> :DBExecSQLUnderCursor<cr>
-inoremap <C-E> <C-\><C-O>:DBExecSQLUnderCursor<cr>
+"nnoremap <C-C> :DBPromptForBufferParameters<cr>
+"nnoremap <C-E> :DBExecSQLUnderCursor<cr>
+"inoremap <C-E> <C-\><C-O>:DBExecSQLUnderCursor<cr>
+"map <F5> <Plug>DBExecSQLUnderCursor
