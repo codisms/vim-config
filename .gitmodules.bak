@@ -8,15 +8,36 @@
 	path = pack/bundle/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
 	branch = job
+[submodule "pack/bundle/start/YouCompleteMe"]
+	path = pack/bundle/start/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "pack/bundle/start/dbext.vim"]
 	path = pack/bundle/start/dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim.git
+[submodule "pack/bundle/start/pgsql.vim"]
+	path = pack/bundle/start/pgsql.vim
+	url = https://github.com/exu/pgsql.vim.git
 [submodule "pack/bundle/start/taboo.vim"]
 	path = pack/bundle/start/taboo.vim
 	url = https://github.com/gcmt/taboo.vim.git
+[submodule "pack/bundle/start/typescript-vim"]
+	path = pack/bundle/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "pack/bundle/start/vim-colors-solarized"]
 	path = pack/bundle/start/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "pack/bundle/start/vim-go"]
+	path = pack/bundle/start/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "pack/bundle/start/vim-javascript"]
+	path = pack/bundle/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "pack/bundle/start/vim-obsession"]
+	path = pack/bundle/start/vim-obsession
+	url = https://github.com/tpope/vim-obsession.git
+[submodule "pack/bundle/start/vim-ruby"]
+	path = pack/bundle/start/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
 [submodule "pack/bundle/start/ale"]
 	path = pack/bundle/start/ale
 	url = https://github.com/w0rp/ale.git
