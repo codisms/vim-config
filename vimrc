@@ -106,9 +106,9 @@ endif
 " LSC language server plugin
 let g:lsc_server_commands = {
 			\ 'javascript': 'javascript-typescript-stdio',
-			\ 'css': 'vscode-css-languageserver-bin --stdio',
-			\ 'scss': 'vscode-css-languageserver-bin --stdio',
-			\ 'less': 'vscode-css-languageserver-bin --stdio',
+			\ 'css': 'css-languageserver --stdio',
+			\ 'scss': 'css-languageserver --stdio',
+			\ 'less': 'css-languageserver --stdio',
 			\ 'go': 'go-langserver',
 			\}
 "let g:lsc_auto_map = v:true " Use defaults
