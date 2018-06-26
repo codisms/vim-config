@@ -6,6 +6,11 @@ set nocompatible
 "set verbose=12
 "set verbosefile=~/vim.log
 
+" Show tree navigation rather than flat
+let g:netrw_liststyle = 3
+" Ctrl-O open netrw (file navigation)
+map <C-o> :Explore<cr>
+
 " Store swap and backup files somewhere safe
 set backupdir=~/.vim/tmp/                   " for the backup files
 set directory=~/.vim/tmp/                   " for the swap files
