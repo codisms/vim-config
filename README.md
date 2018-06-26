@@ -7,8 +7,14 @@ git clone https://github.com/codisms/vim-config.git .vim
 cd .vim
 git submodule init
 git submodule update --init --recursive
-cd bundle/YouCompleteMe
-./install.py --all
+
+!/.vim/pack/bundle/start/fzf/install --bin
+echo "export PATH=\$PATH:~/.vim/pack/bundle/start/fzf/bin" >> ~/.profile
+
+npm install -g javascript-typescript-langserver
+npm install -g vscode-css-languageserver-bin
+go get -u github.com/sourcegraph/go-langserver
+
 cd ~
 ln -s .vim/vimrc .vimrc
 ```
