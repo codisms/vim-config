@@ -11,6 +11,82 @@ let g:netrw_liststyle = 3
 " Ctrl-O open netrw (file navigation)
 map <C-o> :Explore<cr>
 
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"	autocmd!
+"	autocmd VimEnter * :Vexplore
+"augroup END
+"
+"" Toggle Vexplore with Ctrl-E
+"function! ToggleVExplorer(dir)
+"	echom "bufnr(%) = ".bufnr("%")
+"	echom "bufwinnr(NetrwTreeListing 1) = ".bufwinnr("NetrwTreeListing 1")
+"	echom "bufname(bufnr(%)) = ".bufname(bufnr("%"))
+"	if exists("t:expl_buf_num")
+"		echom "Existing window ".t:expl_buf_num
+"		let expl_win_num = bufwinnr(t:expl_buf_num)
+"		echom "expl_win_num = ".expl_win_num
+"		if expl_win_num != -1
+"			let cur_win_nr = winnr()
+"			echom "cur_win_nr = ".cur_win_nr
+"			exec expl_win_num . 'wincmd w'
+"			close
+"			"exec cur_win_nr . 'wincmd w'
+"		endif
+"		unlet t:expl_buf_num
+"	else
+"		echom "No existing window"
+"		if !exists("t:expl_path")
+"			echom "Creating t:expl_path"
+"			let t:expl_path = substitute(exists("b:netrw_curdir")? b:netrw_curdir : expand("%:p"), '^\(.*[/\\]\)[^/\\]*$','\1','e')
+"		endif
+"		exec '1wincmd w'
+"		"if a:dir != ""
+"		"	exec "Vexplore ".a.dir
+"		"else
+"			exec "Vexplore ".t:expl_path
+"		"endif
+"		let t:expl_buf_num = bufnr("%")
+"		echom "t:expl_path = ".t:expl_path
+"		echom "t:expl_buf_num = ".t:expl_buf_num
+"		echom "bufname(t:expl_buf_num) = ".bufname(t:expl_buf_num)
+"	endif
+"endfunction
+"map <silent> <C-o> :call ToggleVExplorer("")<CR>
+
+"com!  -nargs=* -bar -bang -complete=dir  Lexplore  call netrw#Lexplore(<q-args>, <bang>0)
+
+"fun! Lexplore(dir, right)
+"	if exists("t:netrw_lexbufnr")
+"		" close down netrw explorer window
+"		let lexwinnr = bufwinnr(t:netrw_lexbufnr)
+"		if lexwinnr != -1
+"			let curwin = winnr()
+"			exe lexwinnr."wincmd w"
+"			close
+"			exe curwin."wincmd w"
+"		endif
+"		unlet t:netrw_lexbufnr
+"
+"	else
+"		" open netrw explorer window in the dir of current file
+"		" (even on remote files)
+"		let path = substitute(exists("b:netrw_curdir")? b:netrw_curdir : expand("%:p"), '^\(.*[/\\]\)[^/\\]*$','\1','e')
+"		exe (a:right? "botright" : "topleft")." vertical ".((g:netrw_winsize > 0)? (g:netrw_winsize*winwidth(0))/100 : -g:netrw_winsize) . " new"
+"		if a:dir != ""
+"			exe "Explore ".a:dir
+"		else
+"			exe "Explore ".path
+"		endif
+"		setlocal winfixwidth
+"		let t:netrw_lexbufnr = bufnr("%")
+"	endif
+"endfun
+
 " Store swap and backup files somewhere safe
 set backupdir=~/.vim/tmp/                   " for the backup files
 set directory=~/.vim/tmp/                   " for the swap files
