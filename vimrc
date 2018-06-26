@@ -6,6 +6,10 @@ set nocompatible
 "set verbose=12
 "set verbosefile=~/vim.log
 
+" Store swap and backup files somewhere safe
+set backupdir=~/.vim/tmp/                   " for the backup files
+set directory=~/.vim/tmp/                   " for the swap files
+
 " Autocompletion for commands(?)
 set wildmenu
 set wildmode=list:longest,full
@@ -19,7 +23,7 @@ if has("autocmd")
 endif
 
 " LSC language server plugin
-let g:lsc_server_commands = { 
+let g:lsc_server_commands = {
 			\ 'javascript': 'javascript-typescript-stdio',
 			\ 'css': 'vscode-css-languageserver-bin --stdio',
 			\ 'scss': 'vscode-css-languageserver-bin --stdio',
@@ -116,7 +120,7 @@ set number
 
 " Show trailing spaces and all tabs
 set list
-"set listchars=tab:▸\ ,eol:¬,trail:\ 
+"set listchars=tab:▸\ ,eol:¬,trail:\
 set listchars=tab:▸\ ,trail:·
 highlight SpecialKey ctermfg=Red cterm=NONE
 
