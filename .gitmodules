@@ -26,3 +26,6 @@
 [submodule "pack/bundle/start/supertab"]
 	path = pack/bundle/start/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "pack/bundle/start/lightline.vim"]
+	path = pack/bundle/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
