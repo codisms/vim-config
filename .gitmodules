@@ -35,3 +35,6 @@
 [submodule "pack/bundle/start/vim-editorconfig"]
 	path = pack/bundle/start/vim-editorconfig
 	url = https://github.com/sgur/vim-editorconfig.git
+[submodule "pack/bundle/start/typescript-vim"]
+	path = pack/bundle/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
