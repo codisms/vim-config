@@ -106,6 +106,8 @@ endif
 " LSC language server plugin
 let g:lsc_server_commands = {
 			\ 'javascript': 'javascript-typescript-stdio',
+			\ 'typescript': 'javascript-typescript-stdio',
+			\ 'javascript.jsx': 'javascript-typescript-stdio',
 			\ 'css': 'css-languageserver --stdio',
 			\ 'scss': 'css-languageserver --stdio',
 			\ 'less': 'css-languageserver --stdio',
