@@ -158,7 +158,7 @@ filetype plugin indent on
 let g:sql_type_default = 'pgsql'
 
 " ALE plugin
-let g:ale_linters = { 'javascript': [ 'eslint' ] }
+let g:ale_linters = { 'javascript': [ 'eslint' ], 'typescript': [ 'tslint' ]  }
 
 " ALE key mappings
 nmap <silent> [W <Plug>(ale_first)
