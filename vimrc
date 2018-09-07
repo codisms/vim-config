@@ -128,20 +128,16 @@ let g:lsc_server_commands = {
 "    \ 'Completion': 'completefunc',
 "    \}
 
-" https://github.com/neitanod/vim-clevertab
-"call CleverTab#OmniFirst()
-inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
-                      \<c-r>=CleverTab#Complete('tab')<cr>
-                      \<c-r>=CleverTab#Complete('keyword')<cr>
-                      \<c-r>=CleverTab#Complete('omni')<cr>
-                      \<c-r>=CleverTab#Complete('stop')<cr>
-inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
+" SuperTab to scroll from top instead of bottom
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Vim completion popup menu
 " http://vim.wikia.com/wiki/Improve_completion_popup_menu
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-"set completeopt-=preview
+set completeopt-=preview
 "set completeopt=longest,menuone
+"set omnifunc=syntaxcomplete#Complete
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
