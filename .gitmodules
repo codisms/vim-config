@@ -35,3 +35,6 @@
 [submodule "pack/bundle/start/typescript-vim"]
 	path = pack/bundle/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "pack/bundle/start/vim-clevertab"]
+	path = pack/bundle/start/vim-clevertab
+	url = https://github.com/neitanod/vim-clevertab.git
