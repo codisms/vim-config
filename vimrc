@@ -133,8 +133,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Vim completion popup menu
 " http://vim.wikia.com/wiki/Improve_completion_popup_menu
-set completeopt-=preview
-set completeopt=longest,menuone
+" http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+"set completeopt-=preview
+"set completeopt=longest,menuone
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -151,6 +152,7 @@ let g:solarized_contrast = "high"
 "let g:solarized_termcolors=16
 set background=dark
 colorscheme solarized
+let &colorcolumn="80,".join(range(140,999),",")
 
 " filetype settings
 filetype plugin on
@@ -286,4 +288,10 @@ inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
+
+
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-l> <C-w>l
 
