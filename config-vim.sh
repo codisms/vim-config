@@ -4,8 +4,9 @@ cd `dirname $0`
 source ./functions
 
 BUILD=$(option_set build)
-#echo BUILD = ${BUILD}
+echo BUILD = ${BUILD}
 VERSION=$(option_value version)
+echo VERSION = ${VERSION}
 
 configureVim() {
 	#echo -e "\e[36mConfiguring vim...\e[0m"
@@ -83,7 +84,7 @@ installVimExtensions() {
 }
 
 if [ ${BUILD} -eq 1 ]; then
-	${HOME}/.vim/build-vim.sh --version
+	${HOME}/.vim/build-vim.sh --version=${VERSION}
 fi
 configureVim
 installVimExtensions
