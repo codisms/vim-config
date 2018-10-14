@@ -60,9 +60,9 @@ function get_package_manager() {
 }
 
 function debug() {
-	if [ $DEBUG -eq 1 ]; then
+	#if [ $DEBUG -eq 1 ]; then
 		echo -e "\e[3;90m$@\e[0m"
-	fi
+	#fi
 }
 
 function notice() {
