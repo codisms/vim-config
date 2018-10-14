@@ -5,5 +5,6 @@ if [ ! -d ${HOME}/.vim ]; then
 	git clone https://github.com/codisms/vim-config.git ${HOME}/.vim
 fi
 
+echo "@ = $@"
 ${HOME}/.vim/config-vim.sh $@
 

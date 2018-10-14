@@ -3,6 +3,9 @@
 cd `dirname $0`
 source ./functions
 
+echo "0 = $0"
+echo "@ = $@"
+
 BUILD=$(option_set build)
 echo BUILD = ${BUILD}
 VERSION=$(option_value version)
