@@ -5,7 +5,9 @@ SCRIPTPATH=`pwd`
 source "${SCRIPTPATH}/functions"
 
 VERSION=$(option_value version)
+debug "VERSION = ${VERSION}"
 PACKAGE_MANAGER=$(get_package_manager)
+debug "PACKAGE_MANAGER = ${PACKAGE_MANAGER}"
 
 if [ "${VERSION}" == "" ]; then
 	echo "Querying latest version of vim..."
