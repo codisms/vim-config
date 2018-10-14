@@ -1,0 +1,94 @@
+#!/bin/bash
+
+cd `dirname $0`
+SCRIPTPATH=`pwd`
+source "${SCRIPTPATH}/functions"
+
+BUILD=$(options_set build)
+echo BUILD = ${BUILD}
+
+configureVim() {
+	echo -e "\e[36mConfiguring vim...\e[0m"
+	cd "${HOME}"
+
+	echo -e "\e[35mDownloading vim configuration to $(pwd)...\e[0m"
+	if [ -d .vim ]; then
+		cd .vim
+		git pull
+	else
+		git clone --depth=1 https://github.com/codisms/vim-config.git .vim
+		cd .vim
+	fi
+
+    echo -e "\e[35mDownloading submodules...\e[0m"
+    git submodule update --init --recursive --depth=1
+	cd ..
+
+    echo -e "\e[35mConfiguring vim...\e[0m"
+	if [ -f .vim/vimrc ]; then
+		if [ -L .vimrc ]; then
+			rm .vimrc
+		fi
+
+		ln -s .vim/vimrc .vimrc
+	fi
+}
+
+installVimExtensions_YCM() {
+	echo -e "\e[35mInstalling YouCompleteMe...\e[0m"
+
+	cd ${HOME}/.vim/pack/bundle/start/YouCompleteMe
+	#./install.py
+	#echo "~~~ PATH = ${PATH}"
+
+	# https://unix.stackexchange.com/a/233287
+	#FREE_MEMORY=$(free | awk -v RS="" '{ print $10 / 1024; }' | bc)
+	FREE_MEMORY=$(cat /proc/meminfo | grep -e '\(Swap\|Mem\)Free' | awk -v RS="" '{ print $2 + $5; }' | bc)
+	echo FREE_MEMORY = ${FREE_MEMORY}
+	if [ $FREE_MEMORY -lt 1048576 ]; then
+		echo -e "\e[31;5mUsing low-memory compilation options\e[0m"
+		# We're going to assume a large enough swap has been specified
+
+		YCM_CORES=1 ./install.py --clang-completer --gocode-completer --tern-completer
+	else
+		echo "Using normal compilation options"
+		./install.py --clang-completer --gocode-completer --tern-completer
+	fi
+
+	#./install.py --clang-completer --system-libclang --gocode-completer > /dev/null
+}
+
+installVimExtensions_FZF() {
+	echo -e "\e[35mInstalling fzf...\e[0m"
+
+	${HOME}/.vim/pack/bundle/start/fzf/install --bin
+	if ! grep -q fzf ${HOME}/.profile; then
+		echo "export PATH=\$PATH:${HOME}/.vim/pack/bundle/start/fzf/bin" >> ${HOME}/.profile
+	fi
+}
+
+installVimExtensions_LangServ() {
+	echo -e "\e[35mInstalling Javascript/Typescript language server...\e[0m"
+	npm install -g javascript-typescript-langserver
+
+	echo -e "\e[35mInstalling CSS/LESS/SASS language server...\e[0m"
+	npm install -g vscode-css-languageserver-bin
+
+	echo -e "\e[35mInstalling Go language server...\e[0m"
+	go get -u github.com/sourcegraph/go-langserver
+}
+
+installVimExtensions() {
+	echo -e "\e[36mInstalling vim extensions\e[0m"
+
+	#installVimExtensions_YCM
+	installVimExtensions_FZF
+	installVimExtensions_LangServ
+}
+
+if [ ${BUILD} -eq 1 ]; then
+	buildVim
+fi
+configureVim
+installVimExtensions
+
