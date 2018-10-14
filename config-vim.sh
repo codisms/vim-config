@@ -87,8 +87,9 @@ installVimExtensions() {
 }
 
 if [ ${BUILD} -eq 1 ]; then
-	${HOME}/.vim/build-vim.sh --version=${VERSION}
+	${HOME}/.vim/build-vim.sh $@
 fi
+echo "~~~"
+exit 1
 configureVim
 installVimExtensions
-
