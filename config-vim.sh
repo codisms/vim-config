@@ -3,7 +3,7 @@
 cd `dirname $0`
 source ./functions
 
-BUILD=$(option_get build)
+BUILD=$(option_set build)
 #echo BUILD = ${BUILD}
 VERSION=$(option_value version)
 
@@ -16,7 +16,7 @@ configureVim() {
 		cd .vim
 		git pull
 	else
-		git clone --depth=1 https://github.com/codisms/vim-config.git .vim
+		git clone https://github.com/codisms/vim-config.git .vim
 		cd .vim
 	fi
 
@@ -26,7 +26,7 @@ configureVim() {
 	fi
 
 	echo -e "\e[35mDownloading submodules...\e[0m"
-	git submodule update --init --recursive --depth=1
+	git submodule update --init --recursive
 	cd ..
 }
 
