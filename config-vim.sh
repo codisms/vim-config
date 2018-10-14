@@ -1,8 +1,7 @@
 #!/bin/bash
 
 cd `dirname $0`
-SCRIPTPATH=`pwd`
-source "${SCRIPTPATH}/functions"
+source ./functions
 
 BUILD=$(option_get build)
 #echo BUILD = ${BUILD}
