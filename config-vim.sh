@@ -4,16 +4,11 @@ echo config-vim.sh
 #set -e
 set -x
 
-cd `dirname $0`
-source ./functions
+cd `dirname $0` source ./functions
 
-echo "0 = $0"
-echo "@ = $@"
+echo "0 = $0" echo "@ = $@"
 
-BUILD=$(option_set build)
-echo BUILD = ${BUILD}
-VERSION=$(option_value version)
-echo VERSION = ${VERSION}
+BUILD=$(option_set build) echo BUILD = ${BUILD} VERSION=$(option_value version) echo VERSION = ${VERSION}
 
 configureVim() {
 	#echo -e "\e[36mConfiguring vim...\e[0m"
@@ -42,12 +37,12 @@ installVimExtensions_YCM() {
 	echo -e "\e[35mInstalling YouCompleteMe...\e[0m"
 
 	cd ${HOME}/.vim/pack/bundle/start/YouCompleteMe
-	#./install.py
-	#echo "~~~ PATH = ${PATH}"
+	#./install.py echo "~~~ PATH = ${PATH}"
 
-	# https://unix.stackexchange.com/a/233287
-	#FREE_MEMORY=$(free | awk -v RS="" '{ print $10 / 1024; }' | bc)
-	FREE_MEMORY=$(cat /proc/meminfo | grep -e '\(Swap\|Mem\)Free' | awk -v RS="" '{ print $2 + $5; }' | bc)
+	# https://unix.stackexchange.com/a/233287 FREE_MEMORY=$(free | awk -v RS="" '{ print $10 / 1024; }' 
+	#| bc)
+	FREE_MEMORY=$(cat /proc/meminfo | grep -e '\(Swap\|Mem\)Free' | awk -v RS="" '{ print $2 + $5; }' | 
+bc)
 	echo FREE_MEMORY = ${FREE_MEMORY}
 	if [ $FREE_MEMORY -lt 1048576 ]; then
 		echo -e "\e[31;5mUsing low-memory compilation options\e[0m"
@@ -90,10 +85,13 @@ installVimExtensions() {
 	installVimExtensions_LangServ
 }
 
+set -e
+
 if [ ${BUILD} -eq 1 ]; then
 	${HOME}/.vim/build-vim.sh $@
 fi
 echo "~~~"
 exit 1
+
 configureVim
 installVimExtensions
