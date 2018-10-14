@@ -8,10 +8,11 @@ VERSION=$(option_value version)
 PACKAGE_MANAGER=$(get_package_manager)
 
 if [ "${VERSION}" == "" ]; then
-	echo -e "\e[36mBuilding vim...\e[0m"
-else
-	echo -e "\e[36mBuilding vim v${VERSION}...\e[0m"
+	echo "Querying latest version of tmux..."
+	VERSION=$(curl -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/vim/vim/releases/latest -s | json "tag_name")
 fi
+
+echo -e "\e[36mBuilding vim v${VERSION}...\e[0m"
 
 cd /tmp
 if [ -d vim ]; then
