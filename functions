@@ -27,7 +27,6 @@ unset val
 function option_value() {
 	echo "${CMD_OPTIONS[$1]}"
 }
-#   VAL=$(option_value KEY)
 
 function option_set() {
 	if [ "${CMD_OPTIONS[$1]}" != "" ] && [ ${CMD_OPTIONS[$1]} -eq 1 ]; then
@@ -36,8 +35,6 @@ function option_set() {
 		return 0
 	fi
 }
-#   IS_SET=$(option_set KEY)
-#   if [ $IS_SET -eq 1 ]; then
 
 function get_package_manager() {
 	local PACKAGE_MANAGER=
@@ -71,3 +68,8 @@ function debug() {
 function notice() {
 	echo -e "\e[31;5m$@\e[0m"
 }
+
+debug CMD_ARGS = ${CMD_ARGS[*]}
+for key in "${!CMD_OPTIONS[@]}"; do
+	debug CMD_OPTIONS[$key] = ${CMD_OPTIONS[$key]}
+done
