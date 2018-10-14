@@ -4,11 +4,16 @@ echo config-vim.sh
 #set -e
 set -x
 
-cd `dirname $0` source ./functions
+cd `dirname $0`
+source ./functions
 
-echo "0 = $0" echo "@ = $@"
+echo "0 = $0"
+echo "@ = $@"
 
-BUILD=$(option_set build) echo BUILD = ${BUILD} VERSION=$(option_value version) echo VERSION = ${VERSION}
+BUILD=$(option_set build)
+echo BUILD = ${BUILD}
+VERSION=$(option_value version)
+echo VERSION = ${VERSION}
 
 configureVim() {
 	#echo -e "\e[36mConfiguring vim...\e[0m"
