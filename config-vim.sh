@@ -38,9 +38,9 @@ installVimExtensions_YCM() {
 	cd ${HOME}/.vim/pack/bundle/start/YouCompleteMe
 	#./install.py echo "~~~ PATH = ${PATH}"
 
-	# https://unix.stackexchange.com/a/233287 FREE_MEMORY=$(free | awk -v RS="" '{ print $10 / 1024; }' 
+	# https://unix.stackexchange.com/a/233287 FREE_MEMORY=$(free | awk -v RS="" '{ print $10 / 1024; }'
 	#| bc)
-	FREE_MEMORY=$(cat /proc/meminfo | grep -e '\(Swap\|Mem\)Free' | awk -v RS="" '{ print $2 + $5; }' | 
+	FREE_MEMORY=$(cat /proc/meminfo | grep -e '\(Swap\|Mem\)Free' | awk -v RS="" '{ print $2 + $5; }' |
 bc)
 	echo FREE_MEMORY = ${FREE_MEMORY}
 	if [ $FREE_MEMORY -lt 1048576 ]; then
@@ -90,3 +90,5 @@ fi
 
 configureVim
 installVimExtensions
+
+echo -e "\e[36mDone configuring vim\e[0m"

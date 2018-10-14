@@ -74,3 +74,5 @@ $SUDO update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
 $SUDO update-alternatives --set editor /usr/bin/vim
 $SUDO update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
 $SUDO update-alternatives --set vi /usr/bin/vim
+
+echo -e "\e[35mDone installing vim\e[1m"
