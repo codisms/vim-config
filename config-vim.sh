@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo config-vim.sh
 #set -e
 set -x
 
