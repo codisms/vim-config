@@ -31,13 +31,9 @@ dump_args
 }
 
 function option_set() {
-echo "option_set $1"
-dump_args
 	if [ "${CMD_OPTIONS[$1]}" != "" ] && [ ${CMD_OPTIONS[$1]} -eq 1 ]; then
-echo *1
 		return 1
 	else
-echo *2
 		return 0
 	fi
 }
