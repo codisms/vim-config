@@ -25,8 +25,6 @@ unset key
 unset val
 
 function option_value() {
-echo "option_value $1"
-dump_args
 	echo "${CMD_OPTIONS[$1]}"
 }
 
