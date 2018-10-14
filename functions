@@ -60,9 +60,9 @@ function get_package_manager() {
 }
 
 function debug() {
-	#if [ $DEBUG -eq 1 ]; then
+	if [ $DEBUG -eq 1 ]; then
 		echo -e "\e[3;90m$@\e[0m"
-	#fi
+	fi
 }
 
 function notice() {
@@ -75,4 +75,6 @@ function dump_args {
 		debug CMD_OPTIONS[$key] = ${CMD_OPTIONS[$key]}
 	done
 }
+
+DEBUG=$(option_set debug)
 dump_args

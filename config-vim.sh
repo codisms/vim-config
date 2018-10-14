@@ -1,8 +1,7 @@
 #!/bin/bash
 
-echo config-vim.sh
 #set -e
-set -x
+#set -x
 
 cd `dirname $0`
 source ./functions
@@ -86,8 +85,6 @@ installVimExtensions() {
 	installVimExtensions_FZF
 	installVimExtensions_LangServ
 }
-
-set -e
 
 if [ ${BUILD} -eq 1 ]; then
 	echo "!!!"
