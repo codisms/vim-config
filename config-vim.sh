@@ -7,13 +7,10 @@ set -x
 cd `dirname $0`
 source ./functions
 
-echo "0 = $0"
-echo "@ = $@"
-
 BUILD=$(option_set build)
-echo "BUILD = ${BUILD} -$(option_set build)-"
+echo "BUILD = ${BUILD}"
 VERSION=$(option_value version)
-echo "VERSION = ${VERSION} -$(option_value version)-"
+echo "VERSION = ${VERSION}"
 
 configureVim() {
 	#echo -e "\e[36mConfiguring vim...\e[0m"
@@ -93,7 +90,8 @@ installVimExtensions() {
 set -e
 
 if [ ${BUILD} -eq 1 ]; then
-	${HOME}/.vim/build-vim.sh $@
+	echo "!!!"
+	#${HOME}/.vim/build-vim.sh $@
 fi
 echo "~~~"
 exit 1
