@@ -4,11 +4,12 @@ cd `dirname $0`
 SCRIPTPATH=`pwd`
 source "${SCRIPTPATH}/functions"
 
-BUILD=$(options_set build)
-echo BUILD = ${BUILD}
+BUILD=$(option_get build)
+#echo BUILD = ${BUILD}
+VERSION=$(option_value version)
 
 configureVim() {
-	echo -e "\e[36mConfiguring vim...\e[0m"
+	#echo -e "\e[36mConfiguring vim...\e[0m"
 	cd "${HOME}"
 
 	echo -e "\e[35mDownloading vim configuration to $(pwd)...\e[0m"
@@ -20,18 +21,14 @@ configureVim() {
 		cd .vim
 	fi
 
-    echo -e "\e[35mDownloading submodules...\e[0m"
-    git submodule update --init --recursive --depth=1
-	cd ..
-
-    echo -e "\e[35mConfiguring vim...\e[0m"
-	if [ -f .vim/vimrc ]; then
-		if [ -L .vimrc ]; then
-			rm .vimrc
-		fi
-
-		ln -s .vim/vimrc .vimrc
+	if [ ! -f ${HOME}/.vim/vimrc ]; then
+		#echo -e "\e[35mConfiguring vim...\e[0m"
+		ln -s ${HOME}/.vim/vimrc ${HOME}/.vimrc
 	fi
+
+	echo -e "\e[35mDownloading submodules...\e[0m"
+	git submodule update --init --recursive --depth=1
+	cd ..
 }
 
 installVimExtensions_YCM() {
@@ -87,7 +84,7 @@ installVimExtensions() {
 }
 
 if [ ${BUILD} -eq 1 ]; then
-	buildVim
+	${HOME}/.vim/build-vim.sh --version
 fi
 configureVim
 installVimExtensions
