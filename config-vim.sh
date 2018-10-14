@@ -11,9 +11,9 @@ echo "0 = $0"
 echo "@ = $@"
 
 BUILD=$(option_set build)
-echo "BUILD = ${BUILD} $(option_set build)"
+echo "BUILD = ${BUILD} -$(option_set build)-"
 VERSION=$(option_value version)
-echo "VERSION = ${VERSION} $(option_value version)"
+echo "VERSION = ${VERSION} -$(option_value version)-"
 
 configureVim() {
 	#echo -e "\e[36mConfiguring vim...\e[0m"
