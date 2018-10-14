@@ -45,7 +45,7 @@ echo "  - configure"
 			--quiet > /dev/null
 #			--with-python-config-dir=/usr/lib/python2.6/config \
 echo "  - make"
-make --quiet > /dev/null
+make -j$(cat /proc/cpuinfo | awk '/^processor/{print $3}' | wc -l) --quiet > /dev/null
 
 echo -e "\e[35mRemoving existing version of vi/vim...\e[0m"
 
