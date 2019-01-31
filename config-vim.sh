@@ -82,6 +82,10 @@ installVimExtensions() {
 	#installVimExtensions_YCM
 	installVimExtensions_FZF
 	installVimExtensions_LangServ
+
+	cd ${HOME}/.vim/pack/bundle/start/vim-polyglot
+	./build
+	cd ${HOME}/.vim
 }
 
 if [ ${BUILD} -eq 1 ]; then
