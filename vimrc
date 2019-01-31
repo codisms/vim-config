@@ -161,6 +161,10 @@ filetype plugin on
 filetype plugin indent on
 let g:sql_type_default = 'pgsql'
 
+if exists('g:loaded_polyglot')
+	let g:polyglot_disabled = ['go']
+endif
+
 " ALE plugin
 let g:ale_linters = { 'javascript': [ 'eslint' ], 'typescript': [ 'tslint' ]  }
 
