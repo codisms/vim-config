@@ -38,3 +38,6 @@
 [submodule "pack/bundle/start/supertab"]
 	path = pack/bundle/start/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "pack/bundle/start/vim-go"]
+	path = pack/bundle/start/vim-go
+	url = https://github.com/fatih/vim-go.git
