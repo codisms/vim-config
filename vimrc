@@ -164,6 +164,7 @@ let g:sql_type_default = 'pgsql'
 if exists('g:loaded_polyglot')
 	let g:polyglot_disabled = ['go']
 endif
+let g:go_fmt_command = "goimports"
 
 " ALE plugin
 let g:ale_linters = { 'javascript': [ 'eslint' ], 'typescript': [ 'tslint' ]  }
