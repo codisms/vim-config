@@ -111,8 +111,10 @@ let g:lsc_server_commands = {
 			\ 'css': 'css-languageserver --stdio',
 			\ 'scss': 'css-languageserver --stdio',
 			\ 'less': 'css-languageserver --stdio',
-			\ 'go': 'go-langserver',
+			\ 'go': 'go-langserver -format-tool goimports -gocodecompletion -maxparallelism 4',
 			\}
+"			\ 'go': 'bingo',
+"			\ 'go': 'golsp --logfile auto',
 "let g:lsc_auto_map = v:true " Use defaults
 "" ... or set only the keys you want mapped, defaults are:
 "let g:lsc_auto_map = {
@@ -165,6 +167,7 @@ if exists('g:loaded_polyglot')
 	let g:polyglot_disabled = ['go']
 endif
 let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 
 " ALE plugin
 let g:ale_linters = { 'javascript': [ 'eslint' ], 'typescript': [ 'tslint' ]  }
