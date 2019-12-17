@@ -28,7 +28,7 @@ configureVim() {
 	fi
 
 	echo -e "\e[35mDownloading submodules...\e[0m"
-	git submodule update --init --recursive
+	git submodule update --init --recursive --remote
 	cd ..
 }
 
