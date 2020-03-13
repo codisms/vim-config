@@ -112,6 +112,7 @@ let g:lsc_server_commands = {
 			\ 'scss': 'css-languageserver --stdio',
 			\ 'less': 'css-languageserver --stdio',
 			\ 'go': 'go-langserver -format-tool goimports -gocodecompletion -maxparallelism 4',
+			\ 'python' : 'python3 /home/ubuntu/.local/bin/pyls',
 			\}
 "			\ 'go': 'bingo',
 "			\ 'go': 'golsp --logfile auto',
@@ -277,13 +278,17 @@ nnoremap t8 8gt
 nnoremap t9 9gt
 
 " Window key mappings
-map <Tab> <C-W>w
-map <C-j> <C-w>j
-map <C-k> <C-w>k
+"map <Tab> <C-W>w
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l
+"map <C-;> <C-w>;
+nnoremap <C-w>- :split<cr>
+nnoremap <C-w>\| :vsplit<cr>
 
 " Window scrolling
-map <C-h> zH
-map <C-l> zL
+noremap <C-h> zH
+noremap <C-l> zL
 
 " Disable arrow keys
 noremap <Up> <NOP>

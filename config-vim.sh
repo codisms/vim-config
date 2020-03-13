@@ -86,6 +86,9 @@ installVimExtensions_LangServ() {
 
 	echo -e "\e[35mInstalling Go language server...\e[0m"
 	go get -u github.com/sourcegraph/go-langserver
+
+	echo -e "\e[35mInstalling Python language server...\e[0m"
+	pip3 install 'python-language-server[all]'
 }
 
 installVimExtensions() {
