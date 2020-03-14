@@ -101,7 +101,17 @@ set showcmd
 " Jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  " Save and load folds
+  au BufWinLeave ?* mkview
+  au BufWinEnter ?* silent loadview
 endif
+
+"set foldmethod=indent
+set foldmethod=syntax "syntax highlighting items specify folds
+set foldcolumn=0 "defines 1 col at window left, to indicate folding
+set foldnestmax=10
+set nofoldenable
+"set foldlevel=2
 
 " LSC language server plugin
 let g:lsc_server_commands = {
