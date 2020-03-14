@@ -1,1 +1,0 @@
-../repo/solarized/vim-colors-solarized/autoload/togglebg.vim
