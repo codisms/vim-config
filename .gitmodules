@@ -14,9 +14,6 @@
 [submodule "pack/bundle/start/taboo.vim"]
 	path = pack/bundle/start/taboo.vim
 	url = https://github.com/gcmt/taboo.vim.git
-[submodule "pack/bundle/start/vim-colors-solarized"]
-	path = pack/bundle/start/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "pack/bundle/start/ale"]
 	path = pack/bundle/start/ale
 	url = https://github.com/w0rp/ale.git
@@ -44,3 +41,6 @@
 [submodule "pack/bundle/start/vim-abolish"]
 	path = pack/bundle/start/vim-abolish
 	url = git://github.com/tpope/vim-abolish.git
+[submodule "pack/themes/opt/solarized8"]
+	path = pack/themes/opt/solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
