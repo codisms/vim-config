@@ -9,18 +9,20 @@ set nocompatible
 " Show tree navigation rather than flat
 let g:netrw_liststyle = 3
 " Ctrl-O open netrw (file navigation)
-map <C-o> :Explore<cr>
+map <C-o> :Vexplore<cr>
 
-"let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 4
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+"let g:netrw_browse_split = 0
 "let g:netrw_altv = 1
-"let g:netrw_winsize = 25
+let g:netrw_winsize = 25
+let g:netrw_sizestyle = "H"
 "augroup ProjectDrawer
 "	autocmd!
 "	autocmd VimEnter * :Vexplore
 "augroup END
-"
+
 "" Toggle Vexplore with Ctrl-E
 "function! ToggleVExplorer(dir)
 "	echom "bufnr(%) = ".bufnr("%")
@@ -90,10 +92,15 @@ map <C-o> :Explore<cr>
 " Store swap and backup files somewhere safe
 set backupdir=~/.vim/tmp/                   " for the backup files
 set directory=~/.vim/tmp/                   " for the swap files
+set undodir=~/.vim/tmp/
 
-" Autocompletion for commands(?)
-set wildmenu
-set wildmode=list:longest,full
+set wildmenu      " Autocompletion for commands(?)
+"set wildmode=list:longest,full
+
+set noerrorbells  " No audible bell on error
+set visualbell    " Flash screen instead of bell
+
+set undofile      " Maintain undo history between sessions
 
 " Show partial commands in the last line of the screen
 set showcmd
@@ -272,6 +279,10 @@ function! TabRename()
 	execute ':TabooRename ' . name
 endfunction
 
+let mapleader = "\<Space>"    " Map leader from backslash to space
+
+nmap <silent> <leader><Space> :nohlsearch<CR> " <space><space> to clear higlight
+
 " Tab(oo) key mappings
 nnoremap tk :tabfirst<cr>
 nnoremap tl :tabnext<cr>
@@ -297,8 +308,8 @@ nnoremap t9 9gt
 "map <C-k> <C-w>k
 "map <C-l> <C-w>l
 "map <C-;> <C-w>;
-nnoremap <C-w>- :split<cr>
-nnoremap <C-w>\| :vsplit<cr>
+"nnoremap <C-w>- :split<cr>
+"nnoremap <C-w>\| :vsplit<cr>
 
 " Window scrolling
 noremap <C-h> zH
