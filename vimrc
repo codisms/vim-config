@@ -103,7 +103,7 @@ set visualbell    " Flash screen instead of bell
 set undofile      " Maintain undo history between sessions
 augroup vimrc
 	autocmd!
-	autocmd BufWritePre /tmp/* setlocal noundofile " turn on undo file for files in /tmp
+	autocmd BufWritePre /tmp/* setlocal noundofile " turn off undo file for files in /tmp
 augroup END
 
 " Show partial commands in the last line of the screen
