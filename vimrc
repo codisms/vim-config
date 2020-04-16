@@ -135,6 +135,7 @@ let g:lsc_server_commands = {
 			\ 'go': 'go-langserver -format-tool goimports -gocodecompletion -maxparallelism 4',
 			\ 'python' : 'python3 /home/ubuntu/.local/bin/pyls',
 			\}
+"			\ 'typescript': 'typescript-language-server --stdio',
 "			\ 'go': 'bingo',
 "			\ 'go': 'golsp --logfile auto',
 "let g:lsc_auto_map = v:true " Use defaults
