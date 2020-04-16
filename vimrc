@@ -126,7 +126,7 @@ set nofoldenable
 
 " LSC language server plugin
 let g:lsc_server_commands = {
-			\ 'javascript': 'javascript-typescript-stdio',
+			\ 'javascript': 'javascript-typescript-stdio --logfile /tmp/jts.log --trace',
 			\ 'typescript': 'javascript-typescript-stdio',
 			\ 'javascript.jsx': 'javascript-typescript-stdio',
 			\ 'css': 'css-languageserver --stdio',
@@ -138,6 +138,7 @@ let g:lsc_server_commands = {
 "			\ 'typescript': 'typescript-language-server --stdio',
 "			\ 'go': 'bingo',
 "			\ 'go': 'golsp --logfile auto',
+let g:LanguageClient_loggingLevel = 'DEBUG'
 "let g:lsc_auto_map = v:true " Use defaults
 "" ... or set only the keys you want mapped, defaults are:
 "let g:lsc_auto_map = {
@@ -211,8 +212,37 @@ syntax on
 set tabstop=4
 set shiftwidth=4
 
-" Set tab stop for ruby
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+" Set tab stop for Ruby
+autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 expandtab
+" Set tab stop for C
+autocmd Filetype c setlocal tabstop=4 shiftwidth=4 expandtab autoindent
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
+autocmd Filetype javascript.jsx setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
+autocmd Filetype typescript setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
+
+" vim -b : edit binary using xxd-format!
+augroup Binary
+  au!
+  au BufReadPre  *.bin let &bin=1
+  au BufReadPost *.bin if &bin | %!xxd
+  au BufReadPost *.bin set ft=xxd | endif
+  au BufWritePre *.bin if &bin | %!xxd -r
+  au BufWritePre *.bin endif
+  au BufWritePost *.bin if &bin | %!xxd
+  au BufWritePost *.bin set nomod | endif
+augroup END
+
+" vim -b : edit binary using xxd-format!
+augroup DatBinary
+  au!
+  au BufReadPre  *.dat let &bin=1
+  au BufReadPost *.dat if &bin | %!xxd
+  au BufReadPost *.dat set ft=xxd | endif
+  au BufWritePre *.dat if &bin | %!xxd -r
+  au BufWritePre *.dat endif
+  au BufWritePost *.dat if &bin | %!xxd
+  au BufWritePost *.dat set nomod | endif
+augroup END
 
 " SUPPOSED to automatically read files when they've changed
 set autoread
