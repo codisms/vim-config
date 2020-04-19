@@ -6,6 +6,12 @@ curl -sSL https://github.com/codisms/vim-config/raw/master/install.sh | bash -s 
   [--build] [--version=<version>]
 ```
 
+### Windows installation
+On Windows, make sure to execute the following before installation:
+```
+git config --global core.autocrlf input
+```
+
 ## Notable Options
 * Pathogen
 * Uses solarized coloring
