@@ -28,18 +28,18 @@ configureVim() {
 	fi
 
 	echo -e "\e[35mDownloading submodules...\e[0m"
-	if [ -d pack ]; then
-		if [ -d pack.bak ]; then
-			rm -rf pack.bak
-		fi
-		mv pack pack.bak
-	fi
-	if [ -d repo ]; then
-		if [ -d repo.bak ]; then
-			rm -rf repo.bak
-		fi
-		mv repo repo.bak
-	fi
+	#if [ -d pack ]; then
+	#	if [ -d pack.bak ]; then
+	#		rm -rf pack.bak
+	#	fi
+	#	mv pack pack.bak
+	#fi
+	#if [ -d repo ]; then
+	#	if [ -d repo.bak ]; then
+	#		rm -rf repo.bak
+	#	fi
+	#	mv repo repo.bak
+	#fi
 	git submodule update --init --recursive --remote
 	cd ..
 }
