@@ -41,6 +41,7 @@ configureVim() {
 	#	mv repo repo.bak
 	#fi
 	git submodule update --init --recursive --remote
+	git submodule update --recursive --remote --merge
 	cd ..
 }
 
