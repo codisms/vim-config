@@ -113,8 +113,8 @@ set showcmd
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   " Save and load folds
-  au BufWinLeave ?* mkview
-  au BufWinEnter ?* silent loadview
+  "au BufWinLeave ?* mkview
+  "au BufWinEnter ?* silent loadview
 endif
 
 "set foldmethod=indent
@@ -216,9 +216,9 @@ set shiftwidth=4
 autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 expandtab
 " Set tab stop for C
 autocmd Filetype c setlocal tabstop=4 shiftwidth=4 expandtab autoindent
-autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
-autocmd Filetype javascript.jsx setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
-autocmd Filetype typescript setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
+"autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
+"autocmd Filetype javascript.jsx setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
+"autocmd Filetype typescript setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
 
 " vim -b : edit binary using xxd-format!
 augroup Binary
