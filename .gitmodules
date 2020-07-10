@@ -29,9 +29,6 @@
 [submodule "pack/bundle/start/typescript-vim"]
 	path = pack/bundle/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "pack/bundle/start/supertab"]
-	path = pack/bundle/start/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "pack/bundle/start/vim-go"]
 	path = pack/bundle/start/vim-go
 	url = https://github.com/fatih/vim-go.git
@@ -44,3 +41,6 @@
 [submodule "pack/bundle/start/vim-javascript"]
 	path = pack/bundle/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "pack/bundle/start/VimCompletesMe"]
+	path = pack/bundle/start/VimCompletesMe
+	url = https://github.com/ajh17/VimCompletesMe

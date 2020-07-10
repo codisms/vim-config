@@ -138,30 +138,26 @@ let g:lsc_server_commands = {
 "			\ 'typescript': 'typescript-language-server --stdio',
 "			\ 'go': 'bingo',
 "			\ 'go': 'golsp --logfile auto',
-let g:LanguageClient_loggingLevel = 'DEBUG'
-"let g:lsc_auto_map = v:true " Use defaults
-"" ... or set only the keys you want mapped, defaults are:
-"let g:lsc_auto_map = {
-"    \ 'GoToDefinition': '<C-]>',
-"    \ 'FindReferences': 'gr',
-"    \ 'NextReference': '<C-n>',
-"    \ 'PreviousReference': '<C-p>',
-"    \ 'FindImplementations': 'gI',
-"    \ 'FindCodeActions': 'ga',
-"    \ 'DocumentSymbol': 'go',
-"    \ 'WorkspaceSymbol': 'gS',
-"    \ 'ShowHover': 'K',
-"    \ 'Completion': 'completefunc',
-"    \}
+"let g:LanguageClient_loggingLevel = 'DEBUG'
 
-" SuperTab to scroll from top instead of bottom
-let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:SuperTabClosePreviewOnPopupClose = 1
+let g:lsc_auto_map = {
+			\ 'GoToDefinition': 'gd',
+			\ 'FindReferences': 'gr',
+			\ 'Rename': 'gR',
+			\ 'ShowHover': 'K',
+			\ 'FindCodeActions': 'ga',
+			\ 'Completion': 'omnifunc',
+			\}
+let g:lsc_enable_autocomplete  = v:true
+let g:lsc_enable_diagnostics   = v:false
+let g:lsc_reference_highlights = v:false
+let g:lsc_trace_level          = 'off'
 
 " Vim completion popup menu
 " http://vim.wikia.com/wiki/Improve_completion_popup_menu
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-set completeopt-=preview
+"set completeopt-=preview
+set completeopt=menu,menuone,noinsert,noselect
 "set completeopt=longest,menuone
 "set omnifunc=syntaxcomplete#Complete
 
@@ -316,7 +312,8 @@ endfunction
 
 let mapleader = "\<Space>"    " Map leader from backslash to space
 
-nmap <silent> <leader><Space> :nohlsearch<CR> " <space><space> to clear higlight
+" <space><space> to clear higlight
+nmap <silent> <leader><Space> :nohlsearch<CR>
 
 " Tab(oo) key mappings
 nnoremap tk :tabfirst<cr>
