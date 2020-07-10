@@ -1,11 +1,11 @@
 
 export class Whee {
-	negative(x: number): number {
-		return -x;
-	}
+  negative(x: number): number {
+    return -x;
+  }
 
-	multiply(x: number, y: number): number {
-		return x * y;
-	}
+  multiply(x: number, y: number): number {
+    return x * y;
+  }
 }
 

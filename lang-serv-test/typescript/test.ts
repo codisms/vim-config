@@ -2,18 +2,18 @@
 import { Whee } from './lib';
 
 class Foo {
-	foobar(message: string, options: any): void {
-		console.log(message, options);
-	}
+  foobar(message: string, options: any): void {
+    console.log(message, options);
+  }
 
-	foobarlong(): any {
-	}
+  foobarlong(): any {
+  }
 
-	foowhee(): number {
-	}
+  foowhee(): number {
+  }
 
-	foobarshort(): boolean {
-	}
+  foobarshort(): boolean {
+  }
 }
 
 let w = new Whee();
