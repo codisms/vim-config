@@ -13,20 +13,34 @@ git config --global core.autocrlf input
 ```
 
 ## Notable Options
-* Pathogen
 * Uses solarized coloring
 * Tabstop = 4
 * Line numbers and leading space markers visible
 * Go fmt command set to goimports
 * dbext set to PGSQL by default
 
-## Key Mappings
-* Ctrl-h = scroll window left
-* Ctrl-l = scroll window right
-* Tab = Switch windows
-* All arrows keys disabled (purist)
+## Plugins
+* fzf
+* vim-dispatch
+* dbext
+* taboo
+* ale
+* vim-lsc
+* lightline.vim
+* vim-polyglot
+* vim-editorconfig
+* vim-go
+* typescript-vim
+* vim-abolish
+* solarized8
+* vim-javascript
+* VimCompletesMe
 
-## Command Mappings
+## Key Mappings
+* Leader is changed to \<space\>.
+* _All arrows keys disabled_ (purist)
+
+### Command Mappings
 * tk = first tab
 * tl = next tab
 * th = previous tab
@@ -35,4 +49,3 @@ git config --global core.autocrlf input
 * tc = new tab
 * t, = rename tab
 * t# = goto tab #
-
