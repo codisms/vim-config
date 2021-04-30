@@ -126,7 +126,7 @@ set nofoldenable
 
 " LSC language server plugin
 let g:lsc_server_commands = {
-			\ 'javascript': 'javascript-typescript-stdio --logfile /tmp/jts.log --trace',
+			\ 'javascript': 'javascript-typescript-stdio',
 			\ 'typescript': 'javascript-typescript-stdio',
 			\ 'javascript.jsx': 'javascript-typescript-stdio',
 			\ 'css': 'css-languageserver --stdio',
