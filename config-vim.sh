@@ -99,9 +99,11 @@ installVimExtensions() {
 	installVimExtensions_FZF
 	installVimExtensions_LangServ
 
-	cd ${HOME}/.vim/pack/bundle/start/vim-polyglot
-	./build
-	cd ${HOME}/.vim
+	if [ -f ${HOME}/.vim/pack/bundle/start/vim-polyglot/build ]; then
+		cd ${HOME}/.vim/pack/bundle/start/vim-polyglot
+		./build
+		cd ${HOME}/.vim
+	fi
 }
 
 if [ ${BUILD} -eq 1 ]; then
