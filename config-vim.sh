@@ -99,9 +99,15 @@ installVimExtensions() {
 	installVimExtensions_FZF
 	installVimExtensions_LangServ
 
+	echo -e "\e[35mInstalling vim-polyglot...\e[0m"
 	if [ -f ${HOME}/.vim/pack/bundle/start/vim-polyglot/build ]; then
 		cd ${HOME}/.vim/pack/bundle/start/vim-polyglot
 		./build
+		cd ${HOME}/.vim
+	fi
+	if [ -f ${HOME}/.vim/pack/bundle/start/vim-polyglot/Makefile ]; then
+		cd ${HOME}/.vim/pack/bundle/start/vim-polyglot
+		make
 		cd ${HOME}/.vim
 	fi
 }
