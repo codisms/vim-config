@@ -11,7 +11,7 @@ debug "PACKAGE_MANAGER = ${PACKAGE_MANAGER}"
 
 if [ "${VERSION}" == "" ]; then
 	echo "Querying latest version of vim..."
-	VERSION=$(curl -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/vim/vim/tags -s | json "[0].name")
+	VERSION=$(curl -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/vim/vim/tags -s | json '["0"].name')
 fi
 
 echo -e "\e[36mBuilding vim ${VERSION}...\e[0m"
