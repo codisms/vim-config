@@ -207,10 +207,13 @@ syntax on
 " Set tab stop to 4 characters/spaces
 set tabstop=4
 set shiftwidth=4
+setlocal ts=7
 
-" Set tab stop for Ruby
-autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 expandtab
-" Set tab stop for C
+" Set tab stop for YAML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" Set tab stop for ruby
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+" Set tab stop for C/C++
 autocmd Filetype c setlocal tabstop=4 shiftwidth=4 expandtab autoindent
 "autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
 "autocmd Filetype javascript.jsx setlocal tabstop=2 shiftwidth=2 expandtab! autoindent
@@ -239,6 +242,7 @@ augroup DatBinary
   au BufWritePost *.dat if &bin | %!xxd
   au BufWritePost *.dat set nomod | endif
 augroup END
+let g:indentLine_char = '⦙'
 
 " SUPPOSED to automatically read files when they've changed
 set autoread
@@ -291,6 +295,24 @@ let g:dbext_default_display_cmd_line = 1
 
 if filereadable(glob("~/.vim/vimrc.dbext"))
 	source ~/.vim/vimrc.dbext
+endif
+if filereadable(glob("~/.dotfiles.private/vimrc.dbext"))
+	source ~/.dotfiles.private/vimrc.dbext
+endif
+if filereadable(glob("~/.vimrc.dbext"))
+	source ~/.vimrc.dbext
+endif
+if filereadable(glob("../../../.vimrc.dbext"))
+	source ../../../.vimrc.dbext
+endif
+if filereadable(glob("../../.vimrc.dbext"))
+	source ../../.vimrc.dbext
+endif
+if filereadable(glob("../.vimrc.dbext"))
+	source ../.vimrc.dbext
+endif
+if filereadable(glob("./.vimrc.dbext"))
+	source ./.vimrc.dbext
 endif
 
 " dbext key mappings
