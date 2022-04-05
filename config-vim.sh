@@ -86,7 +86,7 @@ installVimExtensions_LangServ() {
 	npm install -g vscode-css-languageserver-bin
 
 	echo -e "\e[35mInstalling Go language server...\e[0m"
-	go get -u github.com/sourcegraph/go-langserver
+	go install github.com/sourcegraph/go-langserver@latest
 
 	echo -e "\e[35mInstalling Python language server...\e[0m"
 	pip3 install 'python-language-server[all]'
