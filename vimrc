@@ -160,6 +160,16 @@ let g:lsc_trace_level          = 'off'
 set completeopt=menu,menuone,noinsert,noselect
 "set completeopt=longest,menuone
 "set omnifunc=syntaxcomplete#Complete
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
