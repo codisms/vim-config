@@ -110,6 +110,9 @@ installVimExtensions() {
 		make
 		cd ${HOME}/.vim
 	fi
+
+	echo -e "\e[35mInstalling coc extensions...\e[0m"
+	vim -c 'CocInstall -sync coc-angular coc-html coc-css coc-eslint coc-go coc-json coc-java coc-python coc-sql coc-tsserver|q'
 }
 
 if [ ${BUILD} -eq 1 ]; then
