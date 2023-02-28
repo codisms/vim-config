@@ -41,3 +41,7 @@
 [submodule "pack/bundle/start/vim-javascript"]
 	path = pack/bundle/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "pack/bundle/start/coc"]
+	path = pack/bundle/start/coc
+	url = https://github.com/neoclide/coc.nvim.git
+	branch = release
