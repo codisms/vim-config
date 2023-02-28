@@ -41,6 +41,3 @@
 [submodule "pack/bundle/start/vim-javascript"]
 	path = pack/bundle/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "pack/bundle/start/VimCompletesMe"]
-	path = pack/bundle/start/VimCompletesMe
-	url = https://github.com/ajh17/VimCompletesMe
