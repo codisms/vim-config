@@ -160,6 +160,8 @@ let g:lsc_trace_level          = 'off'
 set completeopt=menu,menuone,noinsert,noselect
 "set completeopt=longest,menuone
 "set omnifunc=syntaxcomplete#Complete
+
+let g:coc_global_extensions = ['coc-angular', 'coc-html', 'coc-css', 'coc-eslint', 'coc-go', 'coc-json', 'coc-python', 'coc-sql', 'coc-tsserver', 'coc-java']
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
