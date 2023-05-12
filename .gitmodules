@@ -42,3 +42,6 @@
 	path = pack/bundle/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 	branch = release
+[submodule "pack/bundle/start/vim-lsp"]
+	path = pack/bundle/start/vim-lsp
+	url = git@github.com:prabirshrestha/vim-lsp.git
