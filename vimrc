@@ -124,34 +124,34 @@ set foldnestmax=10
 set nofoldenable
 "set foldlevel=2
 
-" LSC language server plugin
-let g:lsc_server_commands = {
-			\ 'javascript': 'javascript-typescript-stdio',
-			\ 'typescript': 'javascript-typescript-stdio',
-			\ 'javascript.jsx': 'javascript-typescript-stdio',
-			\ 'css': 'css-languageserver --stdio',
-			\ 'scss': 'css-languageserver --stdio',
-			\ 'less': 'css-languageserver --stdio',
-			\ 'go': 'go-langserver -format-tool goimports -gocodecompletion -maxparallelism 4',
-			\ 'python' : 'python3 /home/ubuntu/.local/bin/pyls',
-			\}
-"			\ 'typescript': 'typescript-language-server --stdio',
-"			\ 'go': 'bingo',
-"			\ 'go': 'golsp --logfile auto',
-"let g:LanguageClient_loggingLevel = 'DEBUG'
-
-let g:lsc_auto_map = {
-			\ 'GoToDefinition': 'gd',
-			\ 'FindReferences': 'gr',
-			\ 'Rename': 'gR',
-			\ 'ShowHover': 'K',
-			\ 'FindCodeActions': 'ga',
-			\ 'Completion': 'omnifunc',
-			\}
-let g:lsc_enable_autocomplete  = v:true
-" let g:lsc_enable_diagnostics   = v:false
-let g:lsc_reference_highlights = v:false
-let g:lsc_trace_level          = 'off'
+"" LSC language server plugin
+"let g:lsc_server_commands = {
+"			\ 'javascript': 'javascript-typescript-stdio',
+"			\ 'typescript': 'javascript-typescript-stdio',
+"			\ 'javascript.jsx': 'javascript-typescript-stdio',
+"			\ 'css': 'css-languageserver --stdio',
+"			\ 'scss': 'css-languageserver --stdio',
+"			\ 'less': 'css-languageserver --stdio',
+"			\ 'go': 'go-langserver -format-tool goimports -gocodecompletion -maxparallelism 4',
+"			\ 'python' : 'python3 /home/ubuntu/.local/bin/pyls',
+"			\}
+""			\ 'typescript': 'typescript-language-server --stdio',
+""			\ 'go': 'bingo',
+""			\ 'go': 'golsp --logfile auto',
+""let g:LanguageClient_loggingLevel = 'DEBUG'
+"
+"let g:lsc_auto_map = {
+"			\ 'GoToDefinition': 'gd',
+"			\ 'FindReferences': 'gr',
+"			\ 'Rename': 'gR',
+"			\ 'ShowHover': 'K',
+"			\ 'FindCodeActions': 'ga',
+"			\ 'Completion': 'omnifunc',
+"			\}
+"let g:lsc_enable_autocomplete  = v:true
+"" let g:lsc_enable_diagnostics   = v:false
+"let g:lsc_reference_highlights = v:false
+"let g:lsc_trace_level          = 'off'
 
 " Vim completion popup menu
 " http://vim.wikia.com/wiki/Improve_completion_popup_menu
@@ -161,14 +161,23 @@ set completeopt=menu,menuone,noinsert,noselect
 "set completeopt=longest,menuone
 "set omnifunc=syntaxcomplete#Complete
 
-let g:coc_global_extensions = ['coc-angular', 'coc-html', 'coc-css', 'coc-eslint', 'coc-go', 'coc-json', 'coc-python', 'coc-sql', 'coc-tsserver', 'coc-java']
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
