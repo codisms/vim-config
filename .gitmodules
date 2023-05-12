@@ -14,9 +14,6 @@
 [submodule "pack/bundle/start/ale"]
 	path = pack/bundle/start/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "pack/bundle/start/vim-lsc"]
-	path = pack/bundle/start/vim-lsc
-	url = https://github.com/natebosch/vim-lsc.git
 [submodule "pack/bundle/start/lightline.vim"]
 	path = pack/bundle/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
