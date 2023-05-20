@@ -111,6 +111,8 @@ installVimExtensions() {
 		cd ${HOME}/.vim
 	fi
 
+	npm install -g prettier
+
 	echo -e "\e[35mInstalling coc extensions...\e[0m"
 	vim -c 'CocInstall -sync coc-angular coc-html coc-css coc-eslint coc-go coc-json coc-java coc-python coc-sql coc-tsserver|q'
 }
