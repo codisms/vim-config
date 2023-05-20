@@ -11,9 +11,6 @@
 [submodule "pack/bundle/start/taboo.vim"]
 	path = pack/bundle/start/taboo.vim
 	url = https://github.com/gcmt/taboo.vim.git
-[submodule "pack/bundle/start/ale"]
-	path = pack/bundle/start/ale
-	url = https://github.com/w0rp/ale.git
 [submodule "pack/bundle/start/lightline.vim"]
 	path = pack/bundle/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
@@ -23,28 +20,13 @@
 [submodule "pack/bundle/start/vim-editorconfig"]
 	path = pack/bundle/start/vim-editorconfig
 	url = https://github.com/sgur/vim-editorconfig.git
-[submodule "pack/bundle/start/typescript-vim"]
-	path = pack/bundle/start/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "pack/bundle/start/vim-go"]
-	path = pack/bundle/start/vim-go
-	url = https://github.com/fatih/vim-go.git
 [submodule "pack/bundle/start/vim-abolish"]
 	path = pack/bundle/start/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
 [submodule "pack/themes/opt/solarized8"]
 	path = pack/themes/opt/solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git
-[submodule "pack/bundle/start/vim-javascript"]
-	path = pack/bundle/start/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule "pack/bundle/start/coc"]
 	path = pack/bundle/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 	branch = release
-[submodule "pack/bundle/start/vim-lsp"]
-	path = pack/bundle/start/vim-lsp
-	url = git@github.com:prabirshrestha/vim-lsp.git
-[submodule "pack/bundle/start/vim-prettier"]
-	path = pack/bundle/start/vim-prettier
-	url = git@github.com:prettier/vim-prettier.git
