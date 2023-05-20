@@ -45,3 +45,6 @@
 [submodule "pack/bundle/start/vim-lsp"]
 	path = pack/bundle/start/vim-lsp
 	url = git@github.com:prabirshrestha/vim-lsp.git
+[submodule "pack/bundle/start/vim-prettier"]
+	path = pack/bundle/start/vim-prettier
+	url = git@github.com:prettier/vim-prettier.git

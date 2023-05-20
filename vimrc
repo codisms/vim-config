@@ -117,6 +117,9 @@ if has("autocmd")
   "au BufWinEnter ?* silent loadview
 endif
 
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
+
 "set foldmethod=indent
 set foldmethod=syntax "syntax highlighting items specify folds
 set foldcolumn=0 "defines 1 col at window left, to indicate folding
