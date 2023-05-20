@@ -1,13 +1,6 @@
-[submodule "pack/bundle/start/vim-dispatch"]
-	path = pack/bundle/start/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-	branch = job
 [submodule "pack/bundle/start/dbext.vim"]
 	path = pack/bundle/start/dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim.git
-[submodule "pack/bundle/start/taboo.vim"]
-	path = pack/bundle/start/taboo.vim
-	url = https://github.com/gcmt/taboo.vim.git
 [submodule "pack/bundle/start/lightline.vim"]
 	path = pack/bundle/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
