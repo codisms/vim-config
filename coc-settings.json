@@ -1,3 +1,5 @@
 {
    "suggest.noselect": true
+   "html.autoClosingTags": false,
+   "html.autoCreateQuotes": false
 }
