@@ -27,7 +27,6 @@ git config --global core.autocrlf input
 
 - dbext
 - lightline.vim
-- vim-polyglot
 - vim-editorconfig
 - vim-abolish
 - solarized8
