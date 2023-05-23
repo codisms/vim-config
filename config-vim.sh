@@ -48,20 +48,6 @@ configureVim() {
 installVimExtensions() {
 	echo -e "\e[36mInstalling vim extensions\e[0m"
 
-	echo -e "\e[35mInstalling vim-polyglot...\e[0m"
-	if [ -f ${HOME}/.vim/pack/bundle/start/vim-polyglot/build ]; then
-		cd ${HOME}/.vim/pack/bundle/start/vim-polyglot
-		./build
-		cd ${HOME}/.vim
-	fi
-	if [ -f ${HOME}/.vim/pack/bundle/start/vim-polyglot/Makefile ]; then
-		cd ${HOME}/.vim/pack/bundle/start/vim-polyglot
-		make
-		cd ${HOME}/.vim
-	fi
-
-	npm install -g prettier
-
 	echo -e "\e[35mInstalling coc extensions...\e[0m"
 	mkdir -p ~/.config/coc/extensions
 	cd ~/.config/coc/extensions
