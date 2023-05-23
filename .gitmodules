@@ -17,3 +17,6 @@
 	path = pack/bundle/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 	branch = release
+[submodule "pack/bundle/start/vim-polyglot"]
+	path = pack/bundle/start/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
