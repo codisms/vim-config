@@ -49,14 +49,7 @@ installVimExtensions() {
 	echo -e "\e[36mInstalling vim extensions\e[0m"
 
 	echo -e "\e[35mInstalling coc extensions...\e[0m"
-	mkdir -p ~/.config/coc/extensions
-	cd ~/.config/coc/extensions
-	if [ ! -f package.json ]; then
-		echo '{"dependencies":{}}'> package.json
-	fi
-	npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod \
-		coc-angular coc-css coc-docker coc-eslint coc-go coc-html coc-java coc-json coc-prettier \
-		@yaegassy/coc-pylsp coc-sql coc-tsserver
+	source config-coc.sh
 }
 
 if [ ${BUILD} -eq 1 ]; then
