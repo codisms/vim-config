@@ -49,6 +49,7 @@ installVimExtensions() {
 	echo -e "\e[36mInstalling vim extensions\e[0m"
 
 	echo -e "\e[35mInstalling coc extensions...\e[0m"
+	cd ${HOME}/.vim
 	source config-coc.sh
 }
 
