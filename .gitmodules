@@ -19,4 +19,4 @@
 	branch = release
 [submodule "pack/bundle/start/vim-polyglot"]
 	path = pack/bundle/start/vim-polyglot
-	url = git@github.com:sheerun/vim-polyglot.git
+	url = https://github.com/sheerun/vim-polyglot.git
